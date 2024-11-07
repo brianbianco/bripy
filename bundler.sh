@@ -6,11 +6,11 @@ REQ_FILE="requirements.txt"
 TMP_DIR=$(mktemp -d)
 BUNDLE_NAME="model_bundle.tar.gz"
 
-echo "Creating temporary directory: $TMP_DIR"
+mkdir -p $TMP_DIR/code/
 
 cp "$MODEL_FILE" "$TMP_DIR/"
-cp "$INFERENCE_FILE" "$TMP_DIR/"
-cp "$REQ_FILE" "$TMP_DIR/"
+cp "$INFERENCE_FILE" "$TMP_DIR/code/"
+cp "$REQ_FILE" "$TMP_DIR/code/"
 
 cd "$TMP_DIR"
 
